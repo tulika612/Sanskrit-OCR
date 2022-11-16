@@ -19,10 +19,10 @@ python manage.py runserver
 ```
 Navigate to http://127.0.0.1:8000/ in any browser, the application will be running.
 
-## Creating Pull Requests
-Before creating Pull Requests, don't forget to add the model files (shown below) to the .gitignore file:
-```
-mysite/modelss/model.ckpt-310100.data-00000-of-00001
-mysite/modelss/model.ckpt-310100.index
-mysite/modelss/model.ckpt-310100.meta
-```
+## Screenshots
+![Register](/screenshots/1.png) <br>
+ ![Login](/screenshots/1.png) <br/> ![Home](/images/Screenshot_20190908-232034.png) <br/>
+ ![Welcome](/screenshots/1.png) <br/>
+ ![Model-working](/screenshots/1.png) <br/>
+ ![Line](/screenshots/1.png) <br/>
+ ![Page](/screenshots/1.png) <br/>

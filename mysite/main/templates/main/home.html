@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<div class="navbar">
+  <a href="#home">Home</a>
+  <a href="#news">API Documentation</a>
+  <a href="#contact">About</a>
+  <a href="/logout"><strong>LOGOUT</strong></a>!
+</div>
+<br>
+<title>Parinamika-OCR</title>
+<link rel="stylesheet" href="{% static 'main/style.css' %}" />
+<h1 style="font-size:300%; font-family:verdana; text-align: center"> Welcome to Parinamika OCR <h1>
+</head>
+<body>
+  <div class="home-page">
+  <form enctype="multipart/form-data" method="POST" action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Upload"/>
+    <button><a href="/home">Upload new file</a></button>
+    <br><br>
+  </form>
+  <form method="get" action="download">
+    <button type="submit">Download!</button>
+  </form>
+  <form action='next' method='GET'>
+    <button type='submit'> next</button>
+  </form>
+  <form action='prev' method='GET'>
+    <button type='submit'> prev</button>
+  </form>
+</div>
+
+
+  <div class="row">
+  <div class="column">
+    <img src='{{ MEDIA_URL }}{{ imagefile }}' width="570">
+  </div>
+  <div class="column">
+
+    <textarea id="w3review" name="w3review">
+      {{filetext}}
+  </textarea>
+  </div>
+</div>
+</body>
+</html>

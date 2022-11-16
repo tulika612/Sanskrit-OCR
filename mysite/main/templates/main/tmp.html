@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register</title>
+</head>
+<body>
+  <form name="myForm" id="login" method="post" action="">
+    <h1 class="user__title">REGISTER</h1>
+  	<input type="text" required name="username" id="button" placeholder="Enter your name"><br><br>
+    <input type="email" required name="email" id="button" placeholder="Enter your email"><br><br>
+    <input type="password" required name="password_1" id="button" placeholder="Enter your password"><br><br>
+    <input type="password" required name="password_2" id="button" placeholder="ReEnter your password"><br><br>
+    <input type="submit" value="Register" id="butt" name="reg_user">
+  </form>
+  <p>
+    <a href="/register">Reset values?</a><br><br>
+    <a href="/login" style="color: #008000">Already register?</a>
+  </p>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+</head>
+<body>
+  <form name="myForm" id="login" method="post" action="">
+    <h1 class="user__title">LOGIN</h1>
+  	<input type="text" required name="username" id="button" placeholder="Enter your email"><br><br>
+    <input type="password" required name="password" id="button" placeholder="Enter your password"><br><br>
+    <input type="submit" value="login" id="butt1" name="login_user">
+  </form>
+  <p>
+    <a href="/login" >Reset values?</a><br><br>
+    <a href="/register" style="color: #008000">Not register?</a>
+  </p>
+</body>
+</html>
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<div class="navbar">
+  <a href="#home">Home</a>
+  <a href="#news">API Documentation</a>
+  <a href="#contact">About</a>
+</div>
+<br>
+<title>Parinamika-OCR</title>
+<link rel="stylesheet" href="{% static 'main/style.css' %}" />
+<h1 style="font-size:300%; font-family:verdana; text-align: center"> Welcome to Parinamika OCR <h1>
+</head>
+<body>
+  <div class="home-page">
+  <form enctype="multipart/form-data" method="POST" action="">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Upload"/>
+  </form>
+</div>
+  <br><br>
+  <div class="row">
+  <div class="column">
+    <img src='{{ MEDIA_URL }}{{ imagefile }}' width="750" height="600">
+  </div>
+  <div class="column">
+    <textarea id="w3review" name="w3review" rows="40" cols="100">
+      {{filetext}}
+  </textarea>
+  </div>
+</div>
+
+  <br><br>
+<br>
+<a href="/logout"><strong>LOGOUT</strong></a>!
+</body>
+</html>

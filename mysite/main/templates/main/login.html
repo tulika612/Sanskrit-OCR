@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="{% static 'main/style.css' %}" />
+
+  <div class="navbar">
+    <a href="#home">Home</a>
+    <a href="#news">API Documentation</a>
+    <a href="#contact">About</a>
+  </div>
+  <br>
+  <title>Parinamika-OCR</title>
+  <br><br><br>
+  <h1 style="font-size:300%; font-family:verdana; text-align: center"> Welcome to Parinamika OCR <h1>
+</head>
+
+<body>
+
+  <div class="login-page">
+    <div class="form">
+      <form class="login-form" method="POST">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" value="Login" id="butt">
+      </form>
+      <p class="message">Not registered? <a href="/register">Create an account</a></p>
+      <div style="text-align: center;">
+        {% for message in messages%}
+        <br>
+        <label style="color:red;">{{message}}</label>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
